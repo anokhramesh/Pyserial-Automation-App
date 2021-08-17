@@ -1,12 +1,12 @@
-# Button status display app
-import serial
-from tkinter import *
-arduinoData=serial.Serial('com11' ,9600)
-window=Tk()
-window.title("pyserial app")
-window.geometry("550x200")
-Appname=Label(window,text='ANOKHAUTOMATION PYSERIAL APP',fg='white',bg='purple',font="Times 20 bold")
-Appname.grid(row=0,column=0,columnspan=4,pady=10)
+# In this project we will create an Application with tkinter and control 2 digital pins of Arduino board via serial communication.
+import serial# import pyserial module
+from tkinter import *#impolrt everythings from tkinter module
+arduinoData=serial.Serial('com11' ,9600)# assign comport of Arduino board  and boud rate
+window=Tk()# create a window
+window.title("pyserial app")# provide a title name of Application
+window.geometry("550x200")# window diamension
+Appname=Label(window,text='ANOKHAUTOMATION PYSERIAL APP',fg='white',bg='purple',font="Times 20 bold")# provide an Application name to disply at top
+Appname.grid(row=0,column=0,columnspan=4,pady=10)#specify the position of app name label
 #Function for led1 ON
 def led1_on():
     arduinoData.write(b'a')
